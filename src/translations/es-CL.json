@@ -1,0 +1,20 @@
+{
+  "APP_NAME": "Mi Banco",
+  "About": "Sobre",
+  "Hello world !": "Hola mundo!",
+  "WelcomePlatform": "Bienvenido a tu plataforma",
+  "Home": "Página Prinncipal",
+  "Transfer": "Transferir",
+  "History": "Historial",
+  "Recipient": "Destinatarios",
+  "Logged in as": "Conectado como",
+  "Login": "Iniciar Sesión",
+  "Logout": "Salir",
+  "Password": "Contraseña",
+  "Password is required": "Contraseña es requerida",
+  "Username": "Usuario",
+  "Username is required": "Usuario es requerido",
+  "Username or password incorrect.": "Usuario o contraseña incorrecta.",
+  "Remember me": "Recordarme",
+  "Version": "Versión"
+}
