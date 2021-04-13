@@ -7,6 +7,7 @@
   "Transfer": "Transferir",
   "History": "Historial",
   "Recipient": "Destinatarios",
+  "Add Recipient": "Agregar Destinatario",
   "Logged in as": "Conectado como",
   "Login": "Iniciar Sesión",
   "Logout": "Salir",
@@ -16,5 +17,10 @@
   "Username is required": "Usuario es requerido",
   "Username or password incorrect.": "Usuario o contraseña incorrecta.",
   "Remember me": "Recordarme",
-  "Version": "Versión"
+  "Version": "Versión",
+
+  "FULLNAME": "Nombre completo",
+  "EMAIL": "Correo",
+  "PHONE_NUMBER": "Número de teléfono",
+  "SAVE": "Guardar"
 }

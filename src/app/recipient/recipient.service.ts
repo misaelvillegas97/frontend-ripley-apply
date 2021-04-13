@@ -7,23 +7,26 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class RecipientService {
-
-  constructor(private http: HttpClient, private credentials: CredentialsService) { }
+  constructor(private http: HttpClient, private credentials: CredentialsService) {}
 
   public getList(): Observable<Recipient[]> {
-    this.credentials.credentials;
-    return this.http.get<Recipient[]>(routerConstant.RECIPIENT, { params: { rut: this.credentials.credentials.id }})
+    return this.http
+      .get<Recipient[]>(routerConstant.RECIPIENT, { params: { id_user: this.credentials.credentials.id } })
       .pipe(
-        map(recipient => {
+        map((recipient) => {
+          console.log(recipient)
           return recipient as Recipient[];
         })
-      )
+      );
   }
 
   public saveRecipient(recipient: Recipient): Observable<Recipient> {
-    return this.http.post<Recipient>(routerConstant.RECIPIENT, recipient, {params: {id_user: this.credentials.credentials.id}})
+    recipient.id_user = this.credentials.credentials.id;
+    return this.http.post<Recipient>(routerConstant.RECIPIENT, recipient, {
+      params: { id_user: this.credentials.credentials.id },
+    });
   }
 }

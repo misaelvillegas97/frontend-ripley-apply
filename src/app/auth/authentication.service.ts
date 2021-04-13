@@ -21,7 +21,7 @@ export interface LoginContext {
   providedIn: 'root',
 })
 export class AuthenticationService {
-  constructor(private credentialsService: CredentialsService, private http: HttpClient) { }
+  constructor(private credentialsService: CredentialsService, private http: HttpClient) {}
 
   /**
    * Authenticates the user.
@@ -30,13 +30,14 @@ export class AuthenticationService {
    */
   login(context: LoginContext): Observable<User> {
     // Replace by proper authentication call
-    return this.http.get<User>(routerConstant.USERS, {params: {rut: context.username}}).pipe(
-      map(user => {
-        this.credentialsService.setCredentials(user, context.remember);
-        return user;
-      })
-    )
-    
+    return this.http
+      .get<User>(routerConstant.USERS, { params: { rut: context.username } })
+      .pipe(
+        map((user) => {
+          this.credentialsService.setCredentials(user, context.remember);
+          return user;
+        })
+      );
   }
 
   /**

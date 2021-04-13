@@ -1,5 +1,5 @@
-import { Bank } from "./bank.interface";
-import { Recipient } from "./recipient.interface";
+import { Bank } from './bank.interface';
+import { Recipient } from './recipient.interface';
 
 export interface RecipientBank {
   id: string;

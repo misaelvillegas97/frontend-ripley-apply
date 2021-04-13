@@ -12,4 +12,4 @@ import { LoginComponent } from './login.component';
   imports: [CommonModule, ReactiveFormsModule, TranslateModule, NgbModule, I18nModule, AuthRoutingModule],
   declarations: [LoginComponent],
 })
-export class AuthModule { }
+export class AuthModule {}

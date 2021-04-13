@@ -1,0 +1,54 @@
+<div class="jumbotron py-4">
+  <form (ngSubmit)="save()" [formGroup]="recipientForm" novalidate>
+    <h2 class="mb-4" translate>Add Recipient</h2>
+    <div class="row">
+      <div class="form-group col-6">
+        <label for="fullname_input" translate>FULLNAME</label>
+        <input
+          type="text"
+          class="form-control"
+          id="fullname_input"
+          placeholder="Juan Ignacio Zurita Muñoz"
+          formControlName="name"
+        />
+      </div>
+      <div class="form-group col-6">
+        <label for="rut_input">RUT</label>
+        <input
+          type="text"
+          class="form-control"
+          id="rut_input"
+          (blur)="formatRut($event.target.value)"
+          placeholder="19.714.665-6"
+          formControlName="rut"
+        />
+      </div>
+      <div class="form-group col-6">
+        <label for="email_input" translate>EMAIL</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email_input"
+          [email]="true"
+          placeholder="correo@ejemplo.com"
+          formControlName="email"
+        />
+      </div>
+      <div class="form-group col-6">
+        <label for="phone_input" translate>PHONE_NUMBER</label>
+        <input
+          type="tel"
+          class="form-control"
+          id="phone_input"
+          placeholder="+56 9 8234 5678"
+          formControlName="phone_number"
+        />
+      </div>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary mb-2" [disabled]="recipientForm.invalid || isLoading">
+      <i class="fas fa-cog fa-spin" [hidden]="!isLoading"></i>
+      <span translate>SAVE</span>
+    </button>
+  </form>
+</div>

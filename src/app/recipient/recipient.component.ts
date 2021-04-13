@@ -1,34 +1,38 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntilDestroy, untilDestroyed } from '@app/@core';
+import { Recipient } from '@app/@core/models/recipient.interface';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { RecipientService } from './recipient.service';
 
+@UntilDestroy()
 @Component({
   selector: 'app-recipient',
   templateUrl: './recipient.component.html',
-  styleUrls: ['./recipient.component.scss']
+  styleUrls: ['./recipient.component.scss'],
 })
 export class RecipientComponent implements OnInit {
-  recipientForm!: FormGroup;
+  public recipientList: Recipient[];
 
-  constructor(
-    private recipientService: RecipientService,
-    private formBuilder: FormBuilder) { }
+  constructor(private recipientService: RecipientService) {
+    this.loadInfo();
+  }
 
   ngOnInit(): void {
-    this.createForm()
+  }
+  
+  hasCreated(flag: Boolean) {
+    console.log('event triggered')
+    if (flag) {
+      this.loadInfo()
+    }
   }
 
-  save() {
-
+  loadInfo() {
+    this.recipientService.getList().pipe(
+      untilDestroyed(this)
+    ).subscribe(
+      recipients => this.recipientList = recipients
+    )
   }
-
-  private createForm() {
-    this.recipientForm = this.formBuilder.group({
-      name: ['', Validators.required],
-      rut: ['', Validators.required],
-      email: ['', Validators.required],
-      phone_number: ['', Validators.required]
-    });
-  }
-
 }

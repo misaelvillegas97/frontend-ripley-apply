@@ -1,6 +1,5 @@
 <div class="container">
-  <h1 translate>Recipient</h1>
-  <div class="jumbotron">
-    <form (ngSubmit)="save()" [formGroup]="recipientForm" novalidate></form>
-  </div>
+  <h1 class="mb-3" translate>Recipient</h1>
+  <app-form-create-recipient (hasCreated)="hasCreated($event)"></app-form-create-recipient>
+  <app-table-recipients [recipientList]="recipientList" *ngIf="recipientList"></app-table-recipients>
 </div>

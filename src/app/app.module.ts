@@ -13,7 +13,7 @@ import { AuthModule } from '@app/auth';
 import { HomeModule } from './home/home.module';
 import { ShellModule } from './shell/shell.module';
 import { AboutModule } from './about/about.module';
-import { RecipientModule } from "./recipient/recipient.module";
+import { RecipientModule } from './recipient/recipient.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 

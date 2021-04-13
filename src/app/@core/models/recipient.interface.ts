@@ -1,5 +1,5 @@
-import { RecipientBank } from "./recipient_bank.interface";
-import { User } from "./user.interface";
+import { RecipientBank } from './recipient_bank.interface';
+import { User } from './user.interface';
 
 export interface Recipient {
   id?: string;

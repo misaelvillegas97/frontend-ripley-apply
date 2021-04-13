@@ -3,11 +3,10 @@ import { Injectable } from '@angular/core';
 import { CredentialsService } from '@app/auth';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TransferService {
-
-  constructor(private http: HttpClient, private credentials: CredentialsService) { }
+  constructor(private http: HttpClient, private credentials: CredentialsService) {}
 
   public getAll() {
     // this.http.get()

@@ -5,13 +5,11 @@ import { marker } from '@biesbjerg/ngx-translate-extract-marker';
 import { RecipientComponent } from './recipient.component';
 
 const routes: Routes = [
-  Shell.childRoutes([
-    { path: 'recipient', component: RecipientComponent, data: { title: marker('Recipient') } },
-  ]),
+  Shell.childRoutes([{ path: 'recipient', component: RecipientComponent, data: { title: marker('Recipient') } }]),
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class RecipientRoutingModule { }
+export class RecipientRoutingModule {}
