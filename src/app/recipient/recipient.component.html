@@ -1,5 +1,7 @@
 <div class="container">
-  <h1 class="mb-3" translate>Recipient</h1>
+  <h1 class="mb-3" translate>RECIPIENT</h1>
   <app-form-create-recipient (hasCreated)="hasCreated($event)"></app-form-create-recipient>
+  <h3 translate="REGISTERED_RECIPIENTS"></h3>
+  <hr />
   <app-table-recipients [recipientList]="recipientList" *ngIf="recipientList"></app-table-recipients>
 </div>

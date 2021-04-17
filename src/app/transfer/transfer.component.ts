@@ -1,3 +1,5 @@
+import { Recipient } from '@app/@core/models/recipient.interface';
+import { RecipientService } from '@app/recipient/recipient.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,7 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./transfer.component.scss'],
 })
 export class TransferComponent implements OnInit {
-  constructor() {}
+  public recipientList: Recipient[];
+
+  constructor(private recipientService: RecipientService) {
+    this.loadInfo();
+  }
 
   ngOnInit(): void {}
+
+  private loadInfo() {
+    this.recipientService.getList().subscribe((list: Recipient[]) => {
+      this.recipientList = list;
+    });
+  }
 }

@@ -1,3 +1,5 @@
+import { HistoryModule } from './history/history.module';
+import { TransferModule } from './transfer/transfer.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -16,6 +18,7 @@ import { AboutModule } from './about/about.module';
 import { RecipientModule } from './recipient/recipient.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { RecipientBankModule } from './recipient-bank/recipient-bank.module';
 
 @NgModule({
   imports: [
@@ -30,7 +33,10 @@ import { AppRoutingModule } from './app-routing.module';
     ShellModule,
     HomeModule,
     AboutModule,
+    HistoryModule,
+    RecipientBankModule,
     AuthModule,
+    TransferModule,
     RecipientModule,
     AppRoutingModule, // must be imported as the last module as it contains the fallback route
   ],

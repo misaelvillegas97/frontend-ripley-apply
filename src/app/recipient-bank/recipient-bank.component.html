@@ -1,0 +1,26 @@
+<div class="container pb-4" *ngIf="recipient">
+  <h1 class="mb-3" translate>RECIPIENTBANK</h1>
+  <div class="jumbotron py-4">
+    <h3 class="pb-4">{{ recipient.name }}</h3>
+    <div class="row">
+      <div class="col-6 pb-4">
+        <p><b translate="RUT"></b><b class="pr-2">:</b>{{ recipient.rut }}</p>
+      </div>
+      <div class="col-6">
+        <p><b translate="EMAIL"></b><b class="pr-2">:</b>{{ recipient.email }}</p>
+      </div>
+      <div class="col-6">
+        <p>
+          <b translate="PHONE_NUMBER"><b class="pr-2">:</b></b
+          >{{ recipient.phone_number }}
+        </p>
+      </div>
+    </div>
+  </div>
+  <app-form-create-account (hasCreated)="hasCreated($event)" *ngIf="recipient" [recipient]="recipient"></app-form-create-account>
+  <h3 translate="REGISTERED_ACCOUNTS"></h3>
+  <hr />
+  <app-form-create-recipient (hasCreated)="hasCreated($event)" *ngIf="recipient"></app-form-create-recipient>
+  <app-table-account [recipient]="recipient" [accountList]="accountList" *ngIf="accountList"></app-table-account>
+  <br>
+</div>

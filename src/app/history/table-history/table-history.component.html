@@ -1,0 +1,62 @@
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+  <!-- Name Column -->
+  <ng-container matColumnDef="user_name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header translate>RECIPIENT_SELECT</th>
+    <td mat-cell *matCellDef="let element">
+      <a class="mr-2" routerLink="/recipient-account" [queryParams]="{ recipient: element.id }">{{
+        element.id_account.id_recipient.name
+      }}</a>
+    </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="user_rut">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>RUT</th>
+    <td mat-cell *matCellDef="let element">
+      <span class="mr-2">{{ element.id_account.id_recipient.rut }}</span>
+
+    </td>
+  </ng-container>
+
+  <!-- Rut Column -->
+  <ng-container matColumnDef="bank">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header translate="BANK"></th>
+    <td mat-cell *matCellDef="let element">
+      <span class="mr-2">{{ element.id_account.id_bank.name }}</span>
+    </td>
+  </ng-container>
+
+  <!-- Email Column -->
+  <ng-container matColumnDef="type_account">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> <span class="mr-2" translate="BANK_ACCOUNT_TYPE"></span></th>
+    <td mat-cell *matCellDef="let element">
+      <span class="mr-2">{{ element.id_account.account_type }}</span>
+    </td>
+  </ng-container>
+
+  <!-- Phone Column -->
+  <ng-container matColumnDef="number_account">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header><span class="mr-2" translate="BANK_ACCOUNT"></span></th>
+    <td mat-cell *matCellDef="let element">
+      <span class="mr-2">{{ element.id_account.account_number }}</span>
+    </td>
+  </ng-container>
+
+  <!-- Actions Column -->
+  <ng-container matColumnDef="amount">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> <span class="mr-2" translate>AMOUNT</span></th>
+    <td mat-cell *matCellDef="let element">
+      <span class="mr-2">{{ element.amount }}</span>
+    </td>
+  </ng-container>
+  <!-- Actions Column -->
+  <ng-container matColumnDef="date">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header translate="CREATED_AT"></th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.created_at }}
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>

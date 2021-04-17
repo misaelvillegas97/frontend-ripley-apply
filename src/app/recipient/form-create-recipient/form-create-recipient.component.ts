@@ -22,8 +22,6 @@ export class FormCreateRecipientComponent implements OnInit {
   recipientForm!: FormGroup;
   isLoading: Boolean = false;
 
-  recipientList$: Observable<Recipient[]>;
-
   constructor(private recipientService: RecipientService, private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {

@@ -1,0 +1,39 @@
+<div class="jumbotron py-4">
+  <form (ngSubmit)="save()" [formGroup]="recipientBankForm" novalidate>
+    <h2 class="mb-4" translate>Add Recipient</h2>
+    <div class="row">
+      <div class="col-6 pb-3">
+        <label for="bank_input" translate="BANK_LIST"></label>
+        <select class="custom-select" id="bank_input" *ngIf="bankList" formControlName="id_bank">
+          <ng-container *ngFor="let bank of bankList">
+            <option [value]="bank.id">{{ bank.name }}</option>
+          </ng-container>
+        </select>
+      </div>
+      <div class="col-6 pb-3">
+        <label for="type_input" translate="BANK_ACCOUNT_TYPE"></label>
+        <select class="custom-select" id="type_input" formControlName="account_type">
+          <option value="Cuenta Corriente">Cuenta Corriente</option>
+          <option value="Cuenta Vista">Cuenta Vista</option>
+        </select>
+      </div>
+      <div class="col-6">
+        <label for="account_number" translate="BANK_ACCOUNT"></label>
+        <input type="number" class="form-control" id="account_number" formControlName="account_number" />
+      </div>
+      <input
+        hidden
+        type="text"
+        *ngIf="recipient"
+        class="form-control"
+        id="id_recipient"
+        formControlName="id_recipient"
+      />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary mb-2" [disabled]="recipientBankForm.invalid || isLoading">
+      <i class="fas fa-cog fa-spin" [hidden]="!isLoading"></i>
+      <span translate>SAVE</span>
+    </button>
+  </form>
+</div>

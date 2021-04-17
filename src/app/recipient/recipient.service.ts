@@ -17,8 +17,17 @@ export class RecipientService {
       .get<Recipient[]>(routerConstant.RECIPIENT, { params: { id_user: this.credentials.credentials.id } })
       .pipe(
         map((recipient) => {
-          console.log(recipient)
           return recipient as Recipient[];
+        })
+      );
+  }
+
+  public getById(recipient_id: string): Observable<Recipient> {
+    return this.http
+      .get<Recipient>(routerConstant.RECIPIENT + '/search', { params: { id_user: this.credentials.credentials.id, id_recipient: recipient_id } })
+      .pipe(
+        map((recipient) => {
+          return recipient as Recipient;
         })
       );
   }

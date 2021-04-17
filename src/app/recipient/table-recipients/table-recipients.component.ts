@@ -10,7 +10,7 @@ import { Recipient } from '@app/@core/models/recipient.interface';
 })
 export class TableRecipientsComponent implements OnInit, AfterViewInit, OnChanges {
   @Input('recipientList') recipientList: Recipient[];
-  displayedColumns: string[] = ['id', 'name', 'rut', 'email', 'phone'];
+  displayedColumns: string[] = ['name', 'rut', 'email', 'phone', 'actions'];
   dataSource: any;
   @ViewChild(MatSort) sort: MatSort;
 

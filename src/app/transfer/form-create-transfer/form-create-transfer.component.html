@@ -1,0 +1,33 @@
+<div class="jumbotron py-4">
+  <form (ngSubmit)="save()" [formGroup]="transferForm" novalidate>
+    <h2 class="mb-4" translate>Transfer</h2>
+    <div class="row">
+      <div class="col-6 pb-3">
+        <label for="recipient_input" translate="RECIPIENT_SELECT"></label>
+        <select (change)="updateAccountList($event.target.value)" class="custom-select" id="recipient_input" *ngIf="recipientList" formControlName="id_recipient">
+          <ng-container *ngFor="let recipient of recipientList">
+            <option [value]="recipient.id">{{ recipient.name }}</option>
+          </ng-container>
+        </select>
+      </div>
+      <div class="col-6 pb-3">
+        <label for="type_input" translate="BANK_ACCOUNT_TYPE"></label>
+        <select class="custom-select" id="type_input" formControlName="id_account">
+          <ng-container *ngIf="recipientBankList">
+            <option *ngFor="let account of recipientBankList" [value]="account.id">{{ account.account_type + ' - ' + account.account_number + ' | ' + account.id_bank.name}}</option>
+          </ng-container>
+        </select>
+      </div>
+      <div class="col-6">
+        <label for="account_number" translate="AMOUNT"></label>
+        <input type="number" class="form-control" id="account_number" formControlName="amount" />
+      </div>
+    </div>
+    <br />
+    <p class="text-success text-italic" *ngIf="exitoMessageStatus" translate="TRANSFER_SUCCESS"></p>
+    <button type="submit" class="btn btn-primary mb-2" [disabled]="transferForm.invalid || isLoading">
+      <i class="fas fa-cog fa-spin" [hidden]="!isLoading"></i>
+      <span translate>SAVE</span>
+    </button>
+  </form>
+</div>

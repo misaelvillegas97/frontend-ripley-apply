@@ -2,20 +2,20 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { Shell } from '@app/shell/shell.service';
 import { marker } from '@biesbjerg/ngx-translate-extract-marker';
-import { RecipientComponent } from './recipient.component';
+import { RecipientBankComponent } from './recipient-bank.component';
 
 const routes: Routes = [
   Shell.childRoutes([
     {
-      path: 'recipient',
-      component: RecipientComponent,
-      data: {title: marker('Recipient')}
+      path: 'recipient-account',
+      component: RecipientBankComponent,
+      data: {title: marker('Recipient\'s account')}
     }
   ]),
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
-export class RecipientRoutingModule { }
+export class RecipientBankRoutingModule { }
