@@ -17,10 +17,14 @@
       </div>
     </div>
   </div>
-  <app-form-create-account (hasCreated)="hasCreated($event)" *ngIf="recipient" [recipient]="recipient"></app-form-create-account>
+  <app-form-create-account
+    (hasCreated)="hasCreated($event)"
+    *ngIf="recipient"
+    [recipient]="recipient"
+  ></app-form-create-account>
   <h3 translate="REGISTERED_ACCOUNTS"></h3>
   <hr />
   <app-form-create-recipient (hasCreated)="hasCreated($event)" *ngIf="recipient"></app-form-create-recipient>
   <app-table-account [recipient]="recipient" [accountList]="accountList" *ngIf="accountList"></app-table-account>
-  <br>
+  <br />
 </div>

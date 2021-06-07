@@ -9,8 +9,8 @@ const routes: Routes = [
     {
       path: 'recipient',
       component: RecipientComponent,
-      data: {title: marker('Recipient')}
-    }
+      data: { title: marker('Recipient') },
+    },
   ]),
 ];
 
@@ -18,4 +18,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class RecipientRoutingModule { }
+export class RecipientRoutingModule {}

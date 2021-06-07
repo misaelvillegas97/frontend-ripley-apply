@@ -8,9 +8,8 @@ describe('RecipientBankComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RecipientBankComponent ]
-    })
-    .compileComponents();
+      declarations: [RecipientBankComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

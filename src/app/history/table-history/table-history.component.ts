@@ -15,7 +15,7 @@ export class TableHistoryComponent implements OnInit, OnChanges {
   @ViewChild(MatSort) sort: MatSort;
 
   ngOnInit() {
-    console.log(this.transferList)
+    console.log(this.transferList);
     this.refresh();
   }
 

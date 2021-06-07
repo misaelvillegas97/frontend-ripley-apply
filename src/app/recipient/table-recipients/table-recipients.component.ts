@@ -14,21 +14,18 @@ export class TableRecipientsComponent implements OnInit, AfterViewInit, OnChange
   dataSource: any;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor() {
-
-  }
+  constructor() {}
 
   ngOnInit() {
     this.refresh();
   }
 
-  ngAfterViewInit(): void {
-  }
-  
+  ngAfterViewInit(): void {}
+
   ngOnChanges() {
-    this.refresh()
+    this.refresh();
   }
-  
+
   refresh() {
     this.dataSource = new MatTableDataSource(this.recipientList);
     this.dataSource.sort = this.sort;

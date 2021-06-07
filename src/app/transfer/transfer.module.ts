@@ -11,13 +11,6 @@ import { FormCreateTransferComponent } from './form-create-transfer/form-create-
 
 @NgModule({
   declarations: [TransferComponent, FormCreateTransferComponent],
-  imports: [
-    CommonModule,
-    TransferRoutingModule,
-    TranslateModule,
-    NgbModule,
-    I18nModule,
-    ReactiveFormsModule
-  ],
+  imports: [CommonModule, TransferRoutingModule, TranslateModule, NgbModule, I18nModule, ReactiveFormsModule],
 })
 export class TransferModule {}

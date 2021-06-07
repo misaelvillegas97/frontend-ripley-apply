@@ -8,9 +8,8 @@ describe('FormCreateTransferComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FormCreateTransferComponent ]
-    })
-    .compileComponents();
+      declarations: [FormCreateTransferComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

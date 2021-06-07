@@ -4,7 +4,13 @@
     <div class="row">
       <div class="col-6 pb-3">
         <label for="recipient_input" translate="RECIPIENT_SELECT"></label>
-        <select (change)="updateAccountList($event.target.value)" class="custom-select" id="recipient_input" *ngIf="recipientList" formControlName="id_recipient">
+        <select
+          (change)="updateAccountList($event.target.value)"
+          class="custom-select"
+          id="recipient_input"
+          *ngIf="recipientList"
+          formControlName="id_recipient"
+        >
           <ng-container *ngFor="let recipient of recipientList">
             <option [value]="recipient.id">{{ recipient.name }}</option>
           </ng-container>
@@ -14,7 +20,9 @@
         <label for="type_input" translate="BANK_ACCOUNT_TYPE"></label>
         <select class="custom-select" id="type_input" formControlName="id_account">
           <ng-container *ngIf="recipientBankList">
-            <option *ngFor="let account of recipientBankList" [value]="account.id">{{ account.account_type + ' - ' + account.account_number + ' | ' + account.id_bank.name}}</option>
+            <option *ngFor="let account of recipientBankList" [value]="account.id">
+              {{ account.account_type + ' - ' + account.account_number + ' | ' + account.id_bank.name }}
+            </option>
           </ng-container>
         </select>
       </div>

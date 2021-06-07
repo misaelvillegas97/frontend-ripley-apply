@@ -9,13 +9,13 @@ const routes: Routes = [
     {
       path: 'recipient-account',
       component: RecipientBankComponent,
-      data: {title: marker('Recipient\'s account')}
-    }
+      data: { title: marker("Recipient's account") },
+    },
   ]),
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class RecipientBankRoutingModule { }
+export class RecipientBankRoutingModule {}

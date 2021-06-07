@@ -7,7 +7,7 @@ import { RecipientBank } from '@app/@core/models/recipient_bank.interface';
 @Component({
   selector: 'app-table-account',
   templateUrl: './table-account.component.html',
-  styleUrls: ['./table-account.component.scss']
+  styleUrls: ['./table-account.component.scss'],
 })
 export class TableAccountComponent implements OnInit, OnChanges {
   @Input('recipient') recipient: Recipient;
@@ -16,22 +16,20 @@ export class TableAccountComponent implements OnInit, OnChanges {
   dataSource: any;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     this.refresh();
   }
 
-  ngAfterViewInit(): void {
-  }
+  ngAfterViewInit(): void {}
 
   ngOnChanges() {
-    this.refresh()
+    this.refresh();
   }
 
   refresh() {
     this.dataSource = new MatTableDataSource(this.accountList);
     this.dataSource.sort = this.sort;
   }
-
 }

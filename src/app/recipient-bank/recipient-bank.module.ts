@@ -11,7 +11,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { I18nModule } from '@app/i18n';
 import { FormCreateAccountComponent } from './form-create-account/form-create-account.component';
 
-
 @NgModule({
   declarations: [RecipientBankComponent, TableAccountComponent, FormCreateAccountComponent],
   imports: [
@@ -23,6 +22,6 @@ import { FormCreateAccountComponent } from './form-create-account/form-create-ac
     I18nModule,
     ReactiveFormsModule,
   ],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class RecipientBankModule { }
+export class RecipientBankModule {}

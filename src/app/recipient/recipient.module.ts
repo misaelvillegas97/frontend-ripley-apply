@@ -22,9 +22,7 @@ import { TableRecipientsComponent } from './table-recipients/table-recipients.co
     TranslateModule,
     I18nModule,
   ],
-  exports: [
-    RecipientComponent, FormCreateRecipientComponent, TableRecipientsComponent
-  ],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+  exports: [RecipientComponent, FormCreateRecipientComponent, TableRecipientsComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class RecipientModule { }
+export class RecipientModule {}

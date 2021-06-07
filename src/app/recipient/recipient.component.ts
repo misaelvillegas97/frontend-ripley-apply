@@ -18,21 +18,19 @@ export class RecipientComponent implements OnInit {
     this.loadInfo();
   }
 
-  ngOnInit(): void {
-  }
-  
+  ngOnInit(): void {}
+
   hasCreated(flag: Boolean) {
-    console.log('event triggered')
+    console.log('event triggered');
     if (flag) {
-      this.loadInfo()
+      this.loadInfo();
     }
   }
 
   loadInfo() {
-    this.recipientService.getList().pipe(
-      untilDestroyed(this)
-    ).subscribe(
-      recipients => this.recipientList = recipients
-    )
+    this.recipientService
+      .getList()
+      .pipe(untilDestroyed(this))
+      .subscribe((recipients) => (this.recipientList = recipients));
   }
 }

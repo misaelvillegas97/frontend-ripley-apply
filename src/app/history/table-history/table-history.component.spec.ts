@@ -8,9 +8,8 @@ describe('TableHistoryComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TableHistoryComponent ]
-    })
-    .compileComponents();
+      declarations: [TableHistoryComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
